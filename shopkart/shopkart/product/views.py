@@ -11,7 +11,7 @@ def index(request):
     }
     return render(request,'index.html',context)
 
-def list_product(request,pk):
+def list_product(request):
     """_summary_
     returns product list page
 

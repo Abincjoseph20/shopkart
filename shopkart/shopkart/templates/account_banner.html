@@ -6,21 +6,18 @@
     <title>Title</title>
 </head>
 <body>
-
-<div class="account-page">
-        <div class="container">
-            <div class="row">
+<div class="row">
                 <div class="col-2">
                     <img src="{% static 'images/image1.png' %}" width="100%">
-                </div>
+                        </div>
                 <div class="col-2">
-<!--                    {% if message in message %}-->
-<!--                    <div>-->
-<!--                        {% for message in messages %}-->
-<!--                        {{ message }}-->
-<!--                        {% endfor %}-->
-<!--                    </div>-->
-<!--                    {% endif %}-->
+                    {% if messages %}
+                    <div class="message-container" >
+                        {% for message in messages %}
+                        <li style="color:red;" class="{{ message.tags }}">{{ message }}</li>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
                     <div class="form-container">
                         <div class="form-btn">
                             <span onclick="login()">Login</span>
@@ -45,11 +42,9 @@
                             <button type="submit" name="register" class="btn">Register</button>
 
                         </form>
+
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-
 </body>
 </html>
