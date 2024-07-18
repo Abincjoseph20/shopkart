@@ -14,24 +14,36 @@
                     <img src="{% static 'images/image1.png' %}" width="100%">
                 </div>
                 <div class="col-2">
+<!--                    {% if message in message %}-->
+<!--                    <div>-->
+<!--                        {% for message in messages %}-->
+<!--                        {{ message }}-->
+<!--                        {% endfor %}-->
+<!--                    </div>-->
+<!--                    {% endif %}-->
                     <div class="form-container">
                         <div class="form-btn">
                             <span onclick="login()">Login</span>
                             <span onclick="register()">Register</span>
                             <hr id="Indicator">
                         </div>
-                        <form id="LoginForm">
-                            <input type="text" placeholder="Username">
-                            <input type="password" placeholder="Password">
-                            <button type="submit" class="btn">Login</button>
+                        <form id="LoginForm" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <input type="text" name="username" maxlength="100" minlength="3" required placeholder="Username">
+                            <input type="password" required minlength="6" placeholder="Password">
+                            <button type="submit" name="login" class="btn">Login</button>
                             <a href="">Forget Password</a>
                         </form>
 
-                        <form id="RegForm">
-                            <input type="text" placeholder="Username">
-                            <input type="email" placeholder="Email">
-                            <input type="password" placeholder="Password">
-                            <button type="submit" class="btn">Register</button>
+                        <form id="RegForm" style="top: 80px" method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+                            <input type="text" name="username" maxlength="100" minlength="3" required placeholder="Username">
+                            <input type="email" required name="email" placeholder="Email">
+                            <input type="password" name="password" required minlength="6" placeholder="Password">
+                            <input type="text" name="address"  minlength="5" required placeholder="address">
+                            <input type="text" name="phone" maxlength="10" minlength="10" required placeholder="phone">
+                            <button type="submit" name="register" class="btn">Register</button>
+
                         </form>
                     </div>
                 </div>
