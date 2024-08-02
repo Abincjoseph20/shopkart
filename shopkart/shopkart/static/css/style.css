@@ -385,26 +385,6 @@ th:last-child{
     padding: 50px 0;
     background: radial-gradient(#fff, #ffd6d6);
 }
-
-
-
-.error{
-color:red;
-}
-.success{
-color:green;
-}
-.message-container{
-    background: #fff;
-    width: 300px;
-    height:fit-content;
-    position: relative;
-    text-align: center;
-    padding: 20px 0;
-    margin: auto;
-    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    }
 .form-container{
     background: #fff;
     width: 300px;
@@ -431,7 +411,7 @@ color:green;
     max-width: 300px;
     padding: 0 20px;
     position: absolute;
-    top:78;
+    top: 130px;
     transition: transform 1s;
 }
 form input{
